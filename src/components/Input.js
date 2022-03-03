@@ -40,8 +40,13 @@ Input.propTypes = {
   event: PropTypes.func.isRequired,
   type: PropTypes.string.isRequired,
   dataId: PropTypes.string.isRequired,
-  minValue: PropTypes.number.isRequired,
-  maxValue: PropTypes.number.isRequired,
+  minValue: PropTypes.number,
+  maxValue: PropTypes.number,
+};
+
+Input.defaultProps = {
+  minValue: 1,
+  maxValue: 90,
 };
 
 export default Input;

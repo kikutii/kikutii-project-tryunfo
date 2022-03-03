@@ -83,14 +83,19 @@ class Form extends React.Component {
             </select>
           </label>
         </div>
-        <Input
-          value={ cardTrunfo }
-          desc="Trunfo"
-          name="cardTrunfo"
-          event={ onInputChange }
-          type="checkbox"
-          dataId="trunfo-input"
-        />
+        <div>
+          <label htmlFor="cardTrunfo">
+            Trunfo
+            <input
+              name="cardTrunfo"
+              id="cardTrunfo"
+              onChange={ onInputChange }
+              data-testid="trunfo-input"
+              type="checkbox"
+              checked={ cardTrunfo }
+            />
+          </label>
+        </div>
         <button
           type="submit"
           data-testid="save-button"

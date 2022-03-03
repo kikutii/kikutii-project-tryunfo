@@ -20,7 +20,7 @@ class Card extends React.Component {
         <div data-testid="attr1-card">{ cardAttr1 }</div>
         <div data-testid="attr2-card">{ cardAttr2 }</div>
         <div data-testid="attr3-card">{ cardAttr3 }</div>
-        <img data-testid="image-card" src={ cardImage } alt={ cardImage } />
+        <img data-testid="image-card" src={ cardImage } alt={ cardName } />
         <div data-testid="rare-card">{ cardRare }</div>
         {
           cardTrunfo ? <h5 data-testid="trunfo-card">Super Trunfo</h5> : ''

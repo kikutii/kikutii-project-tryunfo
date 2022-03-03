@@ -21,52 +21,58 @@ class Form extends React.Component {
     return (
       <form>
         <Input
+          value={ cardName }
           desc="Nome"
-          name={ cardName }
+          name="cardName"
           event={ onInputChange }
           type="text"
           dataId="name-input"
         />
         <Input
+          value={ cardDescription }
           desc="Descrição"
-          name={ cardDescription }
+          name="cardDescription"
           event={ onInputChange }
           type="textarea"
           dataId="description-input"
         />
         <Input
+          value={ cardAttr1 }
           desc="Atributo 1"
-          name={ cardAttr1 }
+          name="cardAttr1"
           event={ onInputChange }
           type="number"
           dataId="attr1-input"
         />
         <Input
+          value={ cardAttr2 }
           desc="Atributo 2"
-          name={ cardAttr2 }
+          name="cardAttr2"
           event={ onInputChange }
           type="number"
           dataId="attr2-input"
         />
         <Input
+          value={ cardAttr3 }
           desc="Atributo 3"
-          name={ cardAttr3 }
+          name="cardAttr3"
           event={ onInputChange }
           type="number"
           dataId="attr3-input"
         />
         <Input
+          value={ cardImage }
           desc="URL da imagem"
-          name={ cardImage }
+          name="cardImage"
           event={ onInputChange }
           type="text"
           dataId="image-input"
         />
         <div>
-          <label htmlFor="cRarity">
+          <label htmlFor="cardRare">
             Raridade
             <select
-              name="cRarity"
+              name="cardRare"
               value={ cardRare }
               onChange={ onInputChange }
               data-testid="rare-input"
@@ -78,8 +84,9 @@ class Form extends React.Component {
           </label>
         </div>
         <Input
+          value={ cardTrunfo }
           desc="Trunfo"
-          name={ cardTrunfo }
+          name="cardTrunfo"
           event={ onInputChange }
           type="checkbox"
           dataId="trunfo-input"

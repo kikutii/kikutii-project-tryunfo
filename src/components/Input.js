@@ -10,6 +10,8 @@ class Input extends React.Component {
       event,
       type,
       dataId,
+      minValue,
+      maxValue,
     } = this.props;
     return (
       <div>
@@ -22,6 +24,8 @@ class Input extends React.Component {
             onChange={ event }
             type={ type }
             data-testid={ dataId }
+            min={ minValue }
+            max={ maxValue }
           />
         </label>
       </div>
@@ -36,6 +40,8 @@ Input.propTypes = {
   event: PropTypes.func.isRequired,
   type: PropTypes.string.isRequired,
   dataId: PropTypes.string.isRequired,
+  minValue: PropTypes.number.isRequired,
+  maxValue: PropTypes.number.isRequired,
 };
 
 export default Input;

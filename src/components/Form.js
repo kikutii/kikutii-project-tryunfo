@@ -16,6 +16,8 @@ class Form extends React.Component {
       onInputChange,
       isSaveButtonDisabled,
       onSaveButtonClick,
+      minValue,
+      maxValue,
       // hasTrunfo,
     } = this.props;
     return (
@@ -43,6 +45,8 @@ class Form extends React.Component {
           event={ onInputChange }
           type="number"
           dataId="attr1-input"
+          minValue={ minValue }
+          maxValue={ maxValue }
         />
         <Input
           value={ cardAttr2 }
@@ -51,6 +55,8 @@ class Form extends React.Component {
           event={ onInputChange }
           type="number"
           dataId="attr2-input"
+          minValue={ minValue }
+          maxValue={ maxValue }
         />
         <Input
           value={ cardAttr3 }
@@ -59,6 +65,8 @@ class Form extends React.Component {
           event={ onInputChange }
           type="number"
           dataId="attr3-input"
+          minValue={ minValue }
+          maxValue={ maxValue }
         />
         <Input
           value={ cardImage }
@@ -122,6 +130,8 @@ Form.propTypes = {
   onInputChange: PropTypes.func.isRequired,
   isSaveButtonDisabled: PropTypes.bool.isRequired,
   onSaveButtonClick: PropTypes.func.isRequired,
+  minValue: PropTypes.number.isRequired,
+  maxValue: PropTypes.number.isRequired,
   // hasTrunfo: PropTypes.bool.isRequired,
 };
 

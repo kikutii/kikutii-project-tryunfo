@@ -15,13 +15,13 @@ class Card extends React.Component {
     } = this.props;
     return (
       <div>
-        <h5 data-testid="name-card">{ cardName }</h5>
-        <h5 data-testid="description-card">{ cardDescription }</h5>
-        <h5 data-testid="attr1-card">{ cardAttr1 }</h5>
-        <h5 data-testid="attr2-card">{ cardAttr2 }</h5>
-        <h5 data-testid="attr3-card">{ cardAttr3 }</h5>
+        <div data-testid="name-card">{ cardName }</div>
+        <div data-testid="description-card">{ cardDescription }</div>
+        <div data-testid="attr1-card">{ cardAttr1 }</div>
+        <div data-testid="attr2-card">{ cardAttr2 }</div>
+        <div data-testid="attr3-card">{ cardAttr3 }</div>
         <img data-testid="image-card" src={ cardImage } alt={ cardImage } />
-        <h5 data-testid="rare-card">{ cardRare }</h5>
+        <div data-testid="rare-card">{ cardRare }</div>
         {
           cardTrunfo ? <h5 data-testid="trunfo-card">Super Trunfo</h5> : ''
         }

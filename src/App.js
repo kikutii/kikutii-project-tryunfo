@@ -19,10 +19,21 @@ class App extends React.Component {
   }
 
   onInputChange(event) {
-    this.setState(() => ({
-      [event.target.id]: event.target.value,
-    }));
+    if (event.target.type === 'checkbox') {
+      const { cardTrunfo } = this.state;
+      this.setState(() => ({
+        [event.target.id]: !cardTrunfo,
+      }));
+    } else {
+      this.setState(() => ({
+        [event.target.id]: event.target.value,
+      }));
+    }
   }
+
+  // validation() {
+  //   console.log('teste');
+  // }
 
   render() {
     const {
@@ -50,14 +61,14 @@ class App extends React.Component {
           onInputChange={ this.onInputChange }
         />
         <Card
-          // cardName={ cardName }
-          // cardDescription={ cardDescription }
-          // cardAttr1={ cardAttr1 }
-          // cardAttr2={ cardAttr2 }
-          // cardAttr3={ cardAttr3 }
-          // cardImage={ cardImage }
-          // cardRare={ cardRare }
-          // cardTrunfo={ cardTrunfo }
+          cardName={ cardName }
+          cardDescription={ cardDescription }
+          cardAttr1={ cardAttr1 }
+          cardAttr2={ cardAttr2 }
+          cardAttr3={ cardAttr3 }
+          cardImage={ cardImage }
+          cardRare={ cardRare }
+          cardTrunfo={ cardTrunfo }
         />
       </div>
     );

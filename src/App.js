@@ -1,12 +1,15 @@
 import React from 'react';
 import Form from './components/Form';
 import Card from './components/Card';
+import CardAdd from './components/CardAdd';
+import './style/App.css';
 
 class App extends React.Component {
   constructor() {
     super();
     this.onInputChange = this.onInputChange.bind(this);
     this.validation = this.validation.bind(this);
+    this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
     this.state = {
       cardName: '',
       cardDescription: '',
@@ -19,7 +22,26 @@ class App extends React.Component {
       minValue: 1,
       maxValue: 90,
       isSaveButtonDisabled: true,
+      cards: [],
     };
+  }
+
+  onSaveButtonClick(event) {
+    event.preventDefault();
+    const currentState = this.state;
+    this.setState((acc) => ({ cards: [...acc.cards, currentState] }));
+
+    this.setState(() => ({
+      isSaveButtonDisabled: true,
+      cardRare: 'normal',
+      cardImage: '',
+      cardAttr3: '0',
+      cardAttr2: '0',
+      cardAttr1: '0',
+      cardDescription: '',
+      cardName: '',
+      cardTrunfo: false,
+    }));
   }
 
   onInputChange(event) {
@@ -81,6 +103,7 @@ class App extends React.Component {
       minValue,
       maxValue,
       isSaveButtonDisabled,
+      cards,
     } = this.state;
     return (
       <div>
@@ -98,6 +121,7 @@ class App extends React.Component {
           minValue={ minValue }
           maxValue={ maxValue }
           isSaveButtonDisabled={ isSaveButtonDisabled }
+          onSaveButtonClick={ this.onSaveButtonClick }
         />
         <Card
           cardName={ cardName }
@@ -109,6 +133,25 @@ class App extends React.Component {
           cardRare={ cardRare }
           cardTrunfo={ cardTrunfo }
         />
+
+        <div className="containerCards">
+          {
+            cards.map((e) => (
+              <CardAdd
+                key={ e.cardName }
+                cardName={ e.cardName }
+                cardDescription={ e.cardDescription }
+                cardAttr1={ e.cardAttr1 }
+                cardAttr2={ e.cardAttr2 }
+                cardAttr3={ e.cardAttr3 }
+                cardImage={ e.cardImage }
+                cardRare={ e.cardRare }
+                cardTrunfo={ e.cardTrunfo }
+                removeCard={ this.removeCard }
+              />
+            ))
+          }
+        </div>
       </div>
     );
   }

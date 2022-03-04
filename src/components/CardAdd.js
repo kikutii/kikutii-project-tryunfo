@@ -5,6 +5,7 @@ import '../style/CardAdd.css';
 class CardAdd extends React.Component {
   render() {
     const {
+      cardNumber,
       cardName,
       cardDescription,
       cardAttr1,
@@ -13,10 +14,11 @@ class CardAdd extends React.Component {
       cardImage,
       cardRare,
       cardTrunfo,
+      removeCard,
     } = this.props;
 
     return (
-      <div className="card">
+      <div className="card" id={ `${cardNumber}` }>
         <h3 className="cardTitle" data-testid="name-card">{cardName}</h3>
         <img
           className="cardImage"
@@ -29,7 +31,8 @@ class CardAdd extends React.Component {
         <span data-testid="attr2-card">{`Atributo2: ${cardAttr2}`}</span>
         <span data-testid="attr3-card">{`Atributo3: ${cardAttr3}`}</span>
         <span className="cardRare" data-testid="rare-card">{cardRare}</span>
-        {cardTrunfo ? <span data-testid="trunfo-card">Super Trunfo</span> : ''}
+        <button type="button" onClick={ removeCard } data-testid="delete-button">Excluir</button>
+        {cardTrunfo ? <span className="trunfo" data-testid="trunfo-card">Super Trunfo</span> : ''}
       </div>
     );
   }

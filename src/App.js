@@ -10,6 +10,7 @@ class App extends React.Component {
     this.onInputChange = this.onInputChange.bind(this);
     this.validation = this.validation.bind(this);
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
+    this.removeCard = this.removeCard.bind(this);
     this.state = {
       cardName: '',
       cardDescription: '',
@@ -25,6 +26,21 @@ class App extends React.Component {
       hasTrunfo: false,
       cards: [],
     };
+  }
+
+  removeCard(event) {
+    const { cards, hasTrunfo } = this.state;
+    this.setState(() => ({
+      cards: cards.filter((element, index) => (
+        index.toString() !== event.target.parentElement.id
+      ))
+    }), () => console.log(this.state.cards))
+
+    if (cards.some((element) => !element.hasTrunfo)) {
+      this.setState(() => ({
+        hasTrunfo: false,
+      }))
+    }
   }
 
   onSaveButtonClick(event) {
@@ -150,9 +166,10 @@ class App extends React.Component {
 
         <div className="containerCards">
           {
-            cards.map((e) => (
+            cards.map((e, index) => (
               <CardAdd
-                key={ e.cardName }
+                key={ index }
+                cardNumber={ index }
                 cardName={ e.cardName }
                 cardDescription={ e.cardDescription }
                 cardAttr1={ e.cardAttr1 }

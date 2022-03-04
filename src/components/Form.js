@@ -18,7 +18,7 @@ class Form extends React.Component {
       onSaveButtonClick,
       minValue,
       maxValue,
-      // hasTrunfo,
+      hasTrunfo,
     } = this.props;
     return (
       <form>
@@ -93,17 +93,23 @@ class Form extends React.Component {
           </label>
         </div>
         <div>
-          <label htmlFor="cardTrunfo">
-            Trunfo
-            <input
-              name="cardTrunfo"
-              id="cardTrunfo"
-              onChange={ onInputChange }
-              data-testid="trunfo-input"
-              type="checkbox"
-              checked={ cardTrunfo }
-            />
-          </label>
+          {
+            hasTrunfo
+              ? <span>Você já tem um Super Trunfo em seu baralho</span>
+              : (
+                <label htmlFor="cardTrunfo">
+                  Trunfo
+                  <input
+                    name="cardTrunfo"
+                    id="cardTrunfo"
+                    onChange={ onInputChange }
+                    data-testid="trunfo-input"
+                    type="checkbox"
+                    checked={ cardTrunfo }
+                  />
+                </label>
+              )
+          }
         </div>
         <button
           type="submit"
@@ -132,7 +138,7 @@ Form.propTypes = {
   onSaveButtonClick: PropTypes.func.isRequired,
   minValue: PropTypes.number.isRequired,
   maxValue: PropTypes.number.isRequired,
-  // hasTrunfo: PropTypes.bool.isRequired,
+  hasTrunfo: PropTypes.bool.isRequired,
 };
 
 export default Form;

@@ -31,14 +31,24 @@ class CardAdd extends React.Component {
         <span data-testid="attr2-card">{`Atributo2: ${cardAttr2}`}</span>
         <span data-testid="attr3-card">{`Atributo3: ${cardAttr3}`}</span>
         <span className="cardRare" data-testid="rare-card">{cardRare}</span>
-        <button type="button" onClick={ removeCard } data-testid="delete-button">Excluir</button>
-        {cardTrunfo ? <span className="trunfo" data-testid="trunfo-card">Super Trunfo</span> : ''}
+        <button
+          type="button"
+          onClick={ removeCard }
+          data-testid="delete-button"
+        >
+          Excluir
+        </button>
+        {cardTrunfo
+          ? <span className="trunfo" data-testid="trunfo-card">Super Trunfo</span>
+          : ''}
       </div>
     );
   }
 }
 
 CardAdd.propTypes = {
+  cardNumber: PropType.number.isRequired,
+  removeCard: PropType.func.isRequired,
   cardName: PropType.string.isRequired,
   cardDescription: PropType.string.isRequired,
   cardAttr1: PropType.string.isRequired,

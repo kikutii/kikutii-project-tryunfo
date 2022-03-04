@@ -28,21 +28,6 @@ class App extends React.Component {
     };
   }
 
-  removeCard(event) {
-    const { cards, hasTrunfo } = this.state;
-    this.setState(() => ({
-      cards: cards.filter((element, index) => (
-        index.toString() !== event.target.parentElement.id
-      ))
-    }), () => console.log(this.state.cards))
-
-    if (cards.some((element) => !element.hasTrunfo)) {
-      this.setState(() => ({
-        hasTrunfo: false,
-      }))
-    }
-  }
-
   onSaveButtonClick(event) {
     event.preventDefault();
 
@@ -82,6 +67,21 @@ class App extends React.Component {
       this.setState(() => ({
         [event.target.id]: event.target.value,
       }), () => this.validation());
+    }
+  }
+
+  removeCard(event) {
+    const { cards } = this.state;
+    this.setState(() => ({
+      cards: cards.filter((element, index) => (
+        index.toString() !== event.target.parentElement.id
+      )),
+    }));
+
+    if (cards.some((element) => !element.hasTrunfo)) {
+      this.setState(() => ({
+        hasTrunfo: false,
+      }));
     }
   }
 

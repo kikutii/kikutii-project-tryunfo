@@ -2,6 +2,12 @@
   background-color: #036b52;
   border: 4px solid #fafafa;
   border-radius: 8px;
+
+  /* Esse espaçamento doido é só pra evitar um erro do eslit */
+  box-shadow: 0 3px 5px
+    rgba(0, 0, 0, 0.2) , 0 6px 10px
+    rgba(0, 0, 0, 0.14) , 0 1px 18px
+    rgba(0, 0, 0, 0.12);
   color: white;
   display: flex;
   flex-direction: column;

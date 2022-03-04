@@ -22,12 +22,24 @@ class App extends React.Component {
       minValue: 1,
       maxValue: 90,
       isSaveButtonDisabled: true,
+      hasTrunfo: false,
       cards: [],
     };
   }
 
   onSaveButtonClick(event) {
     event.preventDefault();
+
+    const {
+      cardTrunfo,
+    } = this.state;
+
+    if (cardTrunfo) {
+      this.setState(() => ({
+        hasTrunfo: true,
+      }));
+    }
+
     const currentState = this.state;
     this.setState((acc) => ({ cards: [...acc.cards, currentState] }));
 
@@ -104,6 +116,7 @@ class App extends React.Component {
       maxValue,
       isSaveButtonDisabled,
       cards,
+      hasTrunfo,
     } = this.state;
     return (
       <div>
@@ -122,6 +135,7 @@ class App extends React.Component {
           maxValue={ maxValue }
           isSaveButtonDisabled={ isSaveButtonDisabled }
           onSaveButtonClick={ this.onSaveButtonClick }
+          hasTrunfo={ hasTrunfo }
         />
         <Card
           cardName={ cardName }

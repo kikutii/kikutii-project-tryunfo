@@ -18,11 +18,16 @@ class CardAdd extends React.Component {
     return (
       <div className="card">
         <h3 className="cardTitle" data-testid="name-card">{cardName}</h3>
-        <img className="cardImage" data-testid="image-card" src={ cardImage } alt={ cardName } />
+        <img
+          className="cardImage"
+          data-testid="image-card"
+          src={ cardImage }
+          alt={ cardName }
+        />
         <span data-testid="description-card">{cardDescription}</span>
-        <span data-testid="attr1-card">Atributo1: {cardAttr1}</span>
-        <span data-testid="attr2-card">Atributo2: {cardAttr2}</span>
-        <span data-testid="attr3-card">Atributo3: {cardAttr3}</span>
+        <span data-testid="attr1-card">{`Atributo1: ${cardAttr1}`}</span>
+        <span data-testid="attr2-card">{`Atributo2: ${cardAttr2}`}</span>
+        <span data-testid="attr3-card">{`Atributo3: ${cardAttr3}`}</span>
         <span className="cardRare" data-testid="rare-card">{cardRare}</span>
         {cardTrunfo ? <span data-testid="trunfo-card">Super Trunfo</span> : ''}
       </div>

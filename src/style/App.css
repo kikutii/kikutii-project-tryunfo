@@ -1,8 +1,8 @@
 .containerCards {
+  background-color: #036b52;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: auto;
   width: 700px;
-  background-color: #036b52;
 }

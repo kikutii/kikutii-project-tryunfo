@@ -1,8 +1,15 @@
+.createCard {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: 40px 0;
+}
+
 .containerCards {
   background-color: #036b52;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   margin: auto;
-  width: 700px;
 }

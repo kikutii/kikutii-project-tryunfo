@@ -12,13 +12,13 @@ class App extends React.Component {
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
     this.removeCard = this.removeCard.bind(this);
     this.state = {
-      cardName: '',
-      cardDescription: '',
-      cardAttr1: '',
-      cardAttr2: '',
-      cardAttr3: '',
-      cardImage: '',
-      cardRare: 'normal',
+      cardName: 'rem',
+      cardDescription: 'Com certeza a melhor personagem dos animes',
+      cardAttr1: '70',
+      cardAttr2: '70',
+      cardAttr3: '70',
+      cardImage: 'https://c.tenor.com/bikpOygQKYEAAAAd/rem-re-zero-starting-life-in-another-world.gif',
+      cardRare: 'muito raro',
       cardTrunfo: false,
       minValue: 1,
       maxValue: 90,
@@ -136,33 +136,37 @@ class App extends React.Component {
     } = this.state;
     return (
       <div>
-        <h1>Tryunfo</h1>
-        <Form
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-          onInputChange={ this.onInputChange }
-          minValue={ minValue }
-          maxValue={ maxValue }
-          isSaveButtonDisabled={ isSaveButtonDisabled }
-          onSaveButtonClick={ this.onSaveButtonClick }
-          hasTrunfo={ hasTrunfo }
-        />
-        <Card
-          cardName={ cardName }
-          cardDescription={ cardDescription }
-          cardAttr1={ cardAttr1 }
-          cardAttr2={ cardAttr2 }
-          cardAttr3={ cardAttr3 }
-          cardImage={ cardImage }
-          cardRare={ cardRare }
-          cardTrunfo={ cardTrunfo }
-        />
+        <div className="createCard">
+          <div>
+            <h1>Tryunfo</h1>
+            <Form
+              cardName={ cardName }
+              cardDescription={ cardDescription }
+              cardAttr1={ cardAttr1 }
+              cardAttr2={ cardAttr2 }
+              cardAttr3={ cardAttr3 }
+              cardImage={ cardImage }
+              cardRare={ cardRare }
+              cardTrunfo={ cardTrunfo }
+              onInputChange={ this.onInputChange }
+              minValue={ minValue }
+              maxValue={ maxValue }
+              isSaveButtonDisabled={ isSaveButtonDisabled }
+              onSaveButtonClick={ this.onSaveButtonClick }
+              hasTrunfo={ hasTrunfo }
+            />
+          </div>
+          <Card
+            cardName={ cardName }
+            cardDescription={ cardDescription }
+            cardAttr1={ cardAttr1 }
+            cardAttr2={ cardAttr2 }
+            cardAttr3={ cardAttr3 }
+            cardImage={ cardImage }
+            cardRare={ cardRare }
+            cardTrunfo={ cardTrunfo }
+          />
+        </div>
 
         <div className="containerCards">
           {

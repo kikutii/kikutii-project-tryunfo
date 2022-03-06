@@ -18,29 +18,49 @@ class CardAdd extends React.Component {
     } = this.props;
 
     return (
-      <div className="card" id={ `${cardNumber}` }>
-        <h3 className="cardTitle" data-testid="name-card">{cardName}</h3>
-        <img
-          className="cardImage"
-          data-testid="image-card"
-          src={ cardImage }
-          alt={ cardName }
-        />
-        <span data-testid="description-card">{cardDescription}</span>
-        <span data-testid="attr1-card">{`Atributo1: ${cardAttr1}`}</span>
-        <span data-testid="attr2-card">{`Atributo2: ${cardAttr2}`}</span>
-        <span data-testid="attr3-card">{`Atributo3: ${cardAttr3}`}</span>
-        <span className="cardRare" data-testid="rare-card">{cardRare}</span>
+      <div className="cardContainer" id={ `${cardNumber}` }>
+        <div className="card">
+          <h3 className="cardTitle" data-testid="name-card">{cardName}</h3>
+          <div className="cardImageDescription">
+            <img
+              className="cardImage"
+              data-testid="image-card"
+              src={ cardImage }
+              alt={ cardName }
+            />
+            <div className="cardDescription" data-testid="description-card">
+              <p>{cardDescription}</p>
+            </div>
+          </div>
+          <div className="cardContainerAttrs">
+            <div className="cardAttr">
+              <p className="cardAttrText" data-testid="attr1-card">Atributo1: </p>
+              <p className="cardPoints">{cardAttr1}</p>
+            </div>
+            <div className="cardAttr">
+              <p className="cardAttrText" data-testid="attr1-card">Atributo2: </p>
+              <p className="cardPoints">{cardAttr2}</p>
+            </div>
+            <div className="cardAttr">
+              <p className="cardAttrText" data-testid="attr1-card">Atributo3: </p>
+              <p className="cardPoints">{cardAttr3}</p>
+            </div>
+          </div>
+          <div className="cardRarity">
+            <p data-testid="rare-card">{cardRare}</p>
+          </div>
+          {cardTrunfo
+            ? <span className="trunfo" data-testid="trunfo-card">Super Trunfo</span>
+            : ''}
+        </div>
         <button
+          className="cardDelete"
           type="button"
           onClick={ removeCard }
           data-testid="delete-button"
         >
           Excluir
         </button>
-        {cardTrunfo
-          ? <span className="trunfo" data-testid="trunfo-card">Super Trunfo</span>
-          : ''}
       </div>
     );
   }

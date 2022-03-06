@@ -14,14 +14,41 @@ class Card extends React.Component {
       cardTrunfo,
     } = this.props;
     return (
-      <div>
-        <div data-testid="name-card">{ cardName }</div>
-        <div data-testid="description-card">{ cardDescription }</div>
-        <div data-testid="attr1-card">{ cardAttr1 }</div>
-        <div data-testid="attr2-card">{ cardAttr2 }</div>
-        <div data-testid="attr3-card">{ cardAttr3 }</div>
-        <img data-testid="image-card" src={ cardImage } alt={ cardName } />
-        <div data-testid="rare-card">{ cardRare }</div>
+      <div className="card">
+        <h3
+          className="cardTitle"
+          data-testid="name-card"
+        >
+          { cardName }
+        </h3>
+        <div className="cardImageDescription">
+          <img
+            className="cardImage"
+            data-testid="image-card"
+            src={ cardImage }
+            alt={ cardName }
+          />
+          <div className="cardDescription" data-testid="description-card">
+            <p>{ cardDescription }</p>
+          </div>
+        </div>
+        <div className="cardContainerAttrs">
+          <div className="cardAttr">
+            <p className="cardAttrText" data-testid="attr1-card">Atributo1: </p>
+            <p className="cardPoints">{ cardAttr1 }</p>
+          </div>
+          <div className="cardAttr">
+            <p className="cardAttrText" data-testid="attr1-card">Atributo2: </p>
+            <p className="cardPoints">{ cardAttr2 }</p>
+          </div>
+          <div className="cardAttr">
+            <p className="cardAttrText" data-testid="attr1-card">Atributo3: </p>
+            <p className="cardPoints">{ cardAttr3 }</p>
+          </div>
+        </div>
+        <div className="cardRarity">
+          <p data-testid="rare-card">{ cardRare }</p>
+        </div>
         {
           cardTrunfo ? <h5 data-testid="trunfo-card">Super Trunfo</h5> : ''
         }

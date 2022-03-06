@@ -34,16 +34,16 @@ class Card extends React.Component {
         </div>
         <div className="cardContainerAttrs">
           <div className="cardAttr">
-            <p className="cardAttrText" data-testid="attr1-card">Atributo1: </p>
-            <p className="cardPoints">{ cardAttr1 }</p>
+            <p className="cardAttrText">Atributo1: </p>
+            <p className="cardPoints" data-testid="attr1-card">{ cardAttr1 }</p>
           </div>
           <div className="cardAttr">
-            <p className="cardAttrText" data-testid="attr1-card">Atributo2: </p>
-            <p className="cardPoints">{ cardAttr2 }</p>
+            <p className="cardAttrText">Atributo2: </p>
+            <p className="cardPoints" data-testid="attr2-card">{ cardAttr2 }</p>
           </div>
           <div className="cardAttr">
-            <p className="cardAttrText" data-testid="attr1-card">Atributo3: </p>
-            <p className="cardPoints">{ cardAttr3 }</p>
+            <p className="cardAttrText">Atributo3: </p>
+            <p className="cardPoints" data-testid="attr3-card">{ cardAttr3 }</p>
           </div>
         </div>
         <div className="cardRarity">

@@ -12,11 +12,11 @@ class App extends React.Component {
     this.onSaveButtonClick = this.onSaveButtonClick.bind(this);
     this.removeCard = this.removeCard.bind(this);
     this.state = {
-      cardName: 'rem',
-      cardDescription: 'Com certeza a melhor personagem dos animes',
-      cardAttr1: '70',
-      cardAttr2: '70',
-      cardAttr3: '70',
+      cardName: '',
+      cardDescription: '',
+      cardAttr1: '',
+      cardAttr2: '',
+      cardAttr3: '',
       cardImage: 'https://c.tenor.com/bikpOygQKYEAAAAd/rem-re-zero-starting-life-in-another-world.gif',
       cardRare: 'muito raro',
       cardTrunfo: false,

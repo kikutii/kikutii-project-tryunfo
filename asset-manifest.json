@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/kikutii-project-tryunfo/static/css/main.4ee83436.css",
+    "main.js": "/kikutii-project-tryunfo/static/js/main.09aaefd6.js",
+    "index.html": "/kikutii-project-tryunfo/index.html",
+    "main.4ee83436.css.map": "/kikutii-project-tryunfo/static/css/main.4ee83436.css.map",
+    "main.09aaefd6.js.map": "/kikutii-project-tryunfo/static/js/main.09aaefd6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4ee83436.css",
+    "static/js/main.09aaefd6.js"
+  ]
+}

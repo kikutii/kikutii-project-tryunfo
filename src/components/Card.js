@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import StarSvg from './StarSvg';
 
 class Card extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class Card extends React.Component {
       cardRare,
       cardTrunfo,
     } = this.props;
+
     return (
       <div className="card">
         <h3
@@ -29,29 +31,29 @@ class Card extends React.Component {
             alt={ cardName }
           />
           <div className="cardDescription" data-testid="description-card">
-            <p>{ cardDescription }</p>
+            <span>{ cardDescription }</span>
           </div>
+
+          { cardTrunfo && <StarSvg /> }
+
         </div>
-        <div className="cardContainerAttrs">
+        <section className="cardContainerAttrs">
           <div className="cardAttr">
-            <p className="cardAttrText">Atributo1: </p>
+            <p className="cardAttrText">Força: </p>
             <p className="cardPoints" data-testid="attr1-card">{ cardAttr1 }</p>
           </div>
           <div className="cardAttr">
-            <p className="cardAttrText">Atributo2: </p>
+            <p className="cardAttrText">Defesa: </p>
             <p className="cardPoints" data-testid="attr2-card">{ cardAttr2 }</p>
           </div>
           <div className="cardAttr">
-            <p className="cardAttrText">Atributo3: </p>
+            <p className="cardAttrText">Sorte: </p>
             <p className="cardPoints" data-testid="attr3-card">{ cardAttr3 }</p>
           </div>
-        </div>
+        </section>
         <div className="cardRarity">
           <p data-testid="rare-card">{ cardRare }</p>
         </div>
-        {
-          cardTrunfo ? <h5 data-testid="trunfo-card">Super Trunfo</h5> : ''
-        }
       </div>
     );
   }

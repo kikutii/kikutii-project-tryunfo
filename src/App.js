@@ -17,7 +17,7 @@ class App extends React.Component {
       cardAttr1: '90',
       cardAttr2: '90',
       cardAttr3: '30',
-      cardImage: 'https://lever-client-logos.s3.us-west-2.amazonaws.com/1ecf7375-9cc9-4b3d-ba9a-c1cdcab267b5-1637340507739.png',
+      cardImage: 'http://i.imgur.com/r3Zf4VI.jpg',
       cardRare: 'muito raro',
       cardTrunfo: true,
       minValue: 1,

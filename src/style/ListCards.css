@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+p {
+  margin: 0;
+}
+
+.card {
+  background-color: rgba(47, 176, 122, 1);
+  border: 0.25rem solid white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.188rem 0.313rem
+    rgba(0, 0, 0, 0.2) , 0 0.375rem 0.625rem
+    rgba(0, 0, 0, 0.14) , 0 0.063rem 1.125rem
+    rgba(0, 0, 0, 0.12);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 22rem;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  width: 14rem;
+}
+
+.cardTitle {
+  margin: 0.25rem 0;
+  min-height: 1.3rem;
+  text-transform: uppercase;
+}
+
+.cardImage {
+  height: 12.5rem;
+  object-fit: cover;
+  width: 100%;
+}
+
+.cardImageDescription {
+  height: 12.5rem;
+  min-height: 12.5rem;
+  position: relative;
+}
+
+.cardDescription {
+  background-color: rgba(0, 0, 0, 0.2);
+  bottom: 0;
+  max-height: 25%;
+  min-height: 0;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  position: absolute;
+  transition: 0.5s;
+  width: 100%;
+  z-index: 1;
+}
+
+.cardDescription:hover {
+  min-height: 100%;
+}
+
+.cardContainerAttrs {
+  background-color: white;
+  color: rgb(35, 35, 35);
+  padding: 0.25rem;
+}
+
+.cardAttr {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.042);
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.25rem;
+  overflow: hidden;
+}
+
+.cardAttrText {
+  font-size: 0.75rem;
+  padding: 0 0.25rem;
+}
+
+.cardPoints {
+  background: linear-gradient(90deg, rgba(63, 94, 251, 1) 0%, rgba(47, 176, 122, 1) 100%);
+  color: white;
+  width: 2rem;
+}
+
+.cardRarity {
+  align-items: center;
+  background: linear-gradient(90deg, rgba(63, 94, 251, 1) 0%, rgba(47, 176, 122, 1) 100%);
+  color: white;
+  display: flex;
+  font-weight: 800;
+  height: 100%;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.cardContainer {
+  margin: 1rem;
+  text-align: center;
+}
+
+.cardRemove {
+  margin: 1rem 0 0;
+}
+
+.cardStar {
+  fill: cornflowerblue;
+  left: 0;
+  margin: 0.5rem;
+  overflow: visible;
+  position: absolute;
+  stroke: white;
+  stroke-width: 3rem;
+  width: 2rem;
+}
